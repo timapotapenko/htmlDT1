@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>DT Crypto</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comfortaa', sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .header, .content, .about-content, .mining-content, .footer {
+            display: block;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+        .logo {
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .logo img {
+            height: 60px;
+        }
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+        .nav button {
+            padding: 15px 25px;
+            border: 1px solid black;
+            background: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 10px;
+            font-family: 'Comfortaa', sans-serif;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        .content, .about-content, .mining-content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .about-content, .mining-content {
+            display: none;
+        }
+        .mobile-warning {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+            padding: 20px;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+        }
+        .mining-content img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+        @media only screen and (max-width: 768px) {
+            .header, .content, .about-content, .mining-content, .footer {
+                display: none;
+            }
+            .mobile-warning {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        function showAbout() {
+            document.querySelector('.content').style.display = 'none';
+            document.querySelector('.mining-content').style.display = 'none';
+            document.querySelector('.about-content').style.display = 'block';
+        }
+        function showHome() {
+            document.querySelector('.content').style.display = 'block';
+            document.querySelector('.about-content').style.display = 'none';
+            document.querySelector('.mining-content').style.display = 'none';
+        }
+        function showMining() {
+            document.querySelector('.content').style.display = 'none';
+            document.querySelector('.about-content').style.display = 'none';
+            document.querySelector('.mining-content').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="mobile-warning">
+        Access to the website is only available from a computer.
+    </div>
+    <div class="header">
+        <div class="logo" onclick="showHome()">
+            <img src="https://i.ibb.co/qgGqbbJ/DTvse.png" alt="DT Logo">
+        </div>
+        <div class="nav">
+            <button onclick="showMining()">MINING</button>
+            <button onclick="showAbout()">ABOUT US</button>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Dt Crypto: A Social Experiment in Cryptocurrency</h1>
+        <p>The Dt Crypto project is a university experiment designed to explore what happens when all tokens are distributed exclusively through mining. Unlike traditional cryptocurrencies, where a portion of tokens is pre-allocated to developers, investors, or marketing, Dt Crypto eliminates any pre-distribution, ensuring completely fair conditions for all participants.</p>
+        <p>This approach allows us to observe the natural formation of a crypto economy—how users mine, trade, and utilize the token when given equal opportunities from the start. The full transparency of the TON blockchain guarantees open transaction records and real-time tracking of token distribution, making this experiment particularly valuable for analysis.</p>
+        <p>The project aims to examine the social and economic impact of purely decentralized distribution. This is an important step in understanding how cryptocurrencies can develop without centralized control and what self-regulating mechanisms may emerge within such a system.</p>
+    </div>
+    <div class="about-content">
+        Vladyslava Shevchenko, Dmytro Shcherbakov, Taras Kucherov, and Vladyslav Diakiv worked and implemented this project and website specifically for the course 2SE307 Bitcoin and blockchain - praktický seminář - anglicky (2024/2025 ZS) at VŠE in Prague.
+    </div>
+    <div class="mining-content">
+        <h1>Mining Difficulty</h1>
+<p>Download our miner for Windows here: <a href="https://github.com/timapotapenko/miner_dt">link</a></p>
+<p>Track transactions here: <a href="https://tonscan.org/jetton/EQAOdoPZlcb-2x8xKtFl7WVZi9aorwf3HKJ6_p2_7_h-FRpc#transactions">link</a></p>
+<p>Check holders here: <a href="https://tonscan.org/jetton/EQAOdoPZlcb-2x8xKtFl7WVZi9aorwf3HKJ6_p2_7_h-FRpc#holders">link</a></p>
+<p>Open-source contract here: <a href="https://tonscan.org/jetton/EQAOdoPZlcb-2x8xKtFl7WVZi9aorwf3HKJ6_p2_7_h-FRpc#source">link</a></p>
+        <img src="output.png" alt="Mining Difficulty Graph">
+    </div>
+    <div class="footer">
+        &copy;DT Crypto
+    </div>
+</body>
+</html>
